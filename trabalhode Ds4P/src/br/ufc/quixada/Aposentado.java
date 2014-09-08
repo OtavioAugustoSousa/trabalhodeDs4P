@@ -1,9 +1,11 @@
 package br.ufc.quixada;
 
-public class Aposentado {
+import java.io.Serializable;
+
+public class Aposentado implements Serializable{
 	
 	private String Ano;
-	private String Espécie;
+	private String Especie;
 	private String Anos_Serviço_Segurado;
 	private String Sexo;
 	private String Clientela;
@@ -16,11 +18,11 @@ public class Aposentado {
 	public void setAno(String ano) {
 		Ano = ano;
 	}
-	public String getEspécie() {
-		return Espécie;
+	public String getEspecie() {
+		return Especie;
 	}
-	public void setEspécie(String espécie) {
-		Espécie = espécie;
+	public void setEspecie(String espécie) {
+		Especie = espécie;
 	}
 	public String getAnos_Serviço_Segurado() {
 		return Anos_Serviço_Segurado;

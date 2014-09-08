@@ -21,7 +21,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Text;
  
-public class exemplo {
+public class GeradorDOM {
 	public List<Aposentado> loadData(){
 		InputStream is;
 		List<Aposentado> myData= new ArrayList<>();
@@ -41,7 +41,7 @@ public class exemplo {
 				
 				aposentado= new Aposentado();
 				aposentado.setAno(a[0].replace("\"", ""));
-				aposentado.setEspécie(a[1].replace("\"", ""));
+				aposentado.setEspecie(a[1].replace("\"", ""));
 				aposentado.setAnos_Serviço_Segurado(a[2].replace("\"", ""));
 				aposentado.setSexo(a[3].replace("\"", ""));
 				aposentado.setClientela(a[4].replace("\"", ""));
@@ -62,7 +62,7 @@ public class exemplo {
 		return myData;
 	}
 	    public static void main(String argv[]) {
-	    	exemplo ex= new exemplo();
+	    	GeradorDOM ex= new GeradorDOM();
 	    	Document doc = null;
 	    	try {
 				doc=ex.factoryDocument();
@@ -90,7 +90,7 @@ public class exemplo {
 		 
 		    //    root elements
 		        Document doc = docBuilder.newDocument();
-		        Element rootElement = doc.createElement("company");
+		        Element rootElement = doc.createElement("Aposentados");
 		        doc.appendChild(rootElement);
 		        	return doc;
 	  	  }
@@ -99,7 +99,7 @@ public class exemplo {
 	       
 	    	
 	    	
-	        Element elemento = doc.createElement("aposentado");
+	        Element elemento = doc.createElement("Aposentado");
 	        doc.getFirstChild().appendChild(elemento);
 	    	
 	        Element anoEle = doc.createElement("Ano");
@@ -118,7 +118,7 @@ public class exemplo {
 			elemento.appendChild(cliEle);
 			
 			Element epEle = doc.createElement("Espécie");
-			Text epText = doc.createTextNode(aposentado.getEspécie());
+			Text epText = doc.createTextNode(aposentado.getEspecie());
 			epEle.appendChild(epText);
 			elemento.appendChild(epEle);
 			
