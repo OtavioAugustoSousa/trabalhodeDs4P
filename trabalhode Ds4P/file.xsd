@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="Aposentados">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Aposentado" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Aposentado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Ano" type="xs:string"/>
+        <xs:element name="Ano_de_servico_do_Segurado" type="xs:string"/>
+        <xs:element name="Clientela" type="xs:string"/>
+        <xs:element name="Espécie" type="xs:string"/>
+        <xs:element name="Qtd_de_Beneficios_Concedidos" type="xs:string"/>
+        <xs:element name="Sexo" type="xs:string"/>
+        <xs:element name="Valor_do_Beneficio_Concedido_MIL_RS" type="xs:string"/>
+        <xs:element name="Valor_do_Beneficio_Concedido" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

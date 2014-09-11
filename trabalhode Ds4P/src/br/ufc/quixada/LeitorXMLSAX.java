@@ -23,12 +23,12 @@ public class LeitorXMLSAX extends DefaultHandler {
 	private List<Aposentado> myAposentados = new ArrayList<Aposentado>();
 
 	public void parseDocument() {
-		// get a factory
+		
 		SAXParserFactory spf = SAXParserFactory.newInstance();
 		try {
-			// get a new instance of parser
+		
 			SAXParser sp = spf.newSAXParser();
-			// parse the file and also register this class for call backs
+		
 			sp.parse("file.xml", this);
 		} catch (SAXException se) {
 			se.printStackTrace();
@@ -39,13 +39,13 @@ public class LeitorXMLSAX extends DefaultHandler {
 		}
 	}
 
-	// Event Handlers
+
 	public void startElement(String uri, String localName, String qName,
 			Attributes attributes) throws SAXException {
-		// reset
+
 		tempVal = "";
 		if (qName.equalsIgnoreCase("Aposentado")) {
-			// create a new instance of employee
+
 			tempAposentado = new Aposentado();
 
 		}
@@ -59,7 +59,7 @@ public class LeitorXMLSAX extends DefaultHandler {
 	public void endElement(String uri, String localName, String qName)
 			throws SAXException {
 		if (qName.equalsIgnoreCase("Aposentado")) {
-			// add it to the list
+
 			myAposentados.add(tempAposentado);
 		} else if (qName.equalsIgnoreCase("Ano")) {
 			tempAposentado.setAno(tempVal);
@@ -122,7 +122,7 @@ public class LeitorXMLSAX extends DefaultHandler {
 		  try { for(Aposentado ap:leitorXMLSAX.recuperarObjeto()){
 		  System.out.println(ap.getEspecie()); } } catch (Exception e) { 
 		  e.printStackTrace(); }
-		 
+		
 
 	}
 }
